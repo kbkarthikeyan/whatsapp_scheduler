@@ -15,12 +15,18 @@ export default function Home() {
         </div>
 
         {/* CTA Buttons */}
-        <div className="grid sm:grid-cols-2 gap-4 mb-12">
+        <div className="grid sm:grid-cols-3 gap-4 mb-12">
+          <Link
+            href="/admin/settings"
+            className="bg-gray-700 hover:bg-gray-800 text-white font-bold py-4 px-6 rounded-lg text-center transition-colors"
+          >
+            ⚙️ Admin Settings
+          </Link>
           <Link
             href="/dashboard"
             className="bg-primary hover:bg-green-600 text-white font-bold py-4 px-6 rounded-lg text-center transition-colors"
           >
-            📊 Organizer Dashboard
+            📊 Dashboard
           </Link>
           <Link
             href="/create"

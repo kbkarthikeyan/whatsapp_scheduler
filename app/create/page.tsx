@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
+import BulkTurfGenerator from "@/components/BulkTurfGenerator";
 
 interface TurfTimeOption {
   id: string;
@@ -20,6 +21,7 @@ export default function CreateEventPage() {
   const [eventDate, setEventDate] = useState("");
   const [pricePerPlayer, setPricePerPlayer] = useState("");
   const [notes, setNotes] = useState("");
+  const [showBulkGenerator, setShowBulkGenerator] = useState(false);
   const [options, setOptions] = useState<TurfTimeOption[]>([
     {
       id: "1",
