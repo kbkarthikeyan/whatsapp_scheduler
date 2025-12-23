@@ -129,7 +129,7 @@ export default function CreateEventPage() {
 
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium mb-1">
+                <label className="block text-sm font-medium mb-2">
                   Event Name *
                 </label>
                 <input
@@ -137,19 +137,19 @@ export default function CreateEventPage() {
                   value={eventName}
                   onChange={(e) => setEventName(e.target.value)}
                   placeholder="e.g., Friday Night Football"
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary dark:bg-gray-700"
+                  className="w-full px-4 py-3 text-base border-2 border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary dark:bg-gray-700"
                   required
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-1">
+                <label className="block text-sm font-medium mb-2">
                   Sport *
                 </label>
                 <select
                   value={sport}
                   onChange={(e) => setSport(e.target.value)}
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary dark:bg-gray-700"
+                  className="w-full px-4 py-3 text-base border-2 border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary dark:bg-gray-700 bg-white dark:bg-gray-700"
                 >
                   <option value="football">⚽ Football</option>
                   <option value="cricket">🏏 Cricket</option>
@@ -160,7 +160,7 @@ export default function CreateEventPage() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-1">
+                <label className="block text-sm font-medium mb-2">
                   Date *
                 </label>
                 <input
@@ -168,7 +168,7 @@ export default function CreateEventPage() {
                   value={eventDate}
                   onChange={(e) => setEventDate(e.target.value)}
                   min={new Date().toISOString().split("T")[0]}
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary dark:bg-gray-700"
+                  className="w-full px-4 py-4 text-lg border-2 border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary dark:bg-gray-700 text-center font-semibold"
                   required
                 />
               </div>
@@ -210,7 +210,7 @@ export default function CreateEventPage() {
 
                   <div className="space-y-3">
                     <div>
-                      <label className="block text-sm font-medium mb-1">
+                      <label className="block text-sm font-medium mb-2">
                         Turf/Venue Name *
                       </label>
                       <input
@@ -220,14 +220,14 @@ export default function CreateEventPage() {
                           updateOption(option.id, "turfName", e.target.value)
                         }
                         placeholder="e.g., Main Pitch, Court A"
-                        className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary dark:bg-gray-700"
+                        className="w-full px-4 py-3 text-base border-2 border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary dark:bg-gray-700"
                         required
                       />
                     </div>
 
                     <div className="grid grid-cols-2 gap-3">
                       <div>
-                        <label className="block text-sm font-medium mb-1">
+                        <label className="block text-sm font-medium mb-2">
                           Start Time *
                         </label>
                         <input
@@ -236,12 +236,12 @@ export default function CreateEventPage() {
                           onChange={(e) =>
                             updateOption(option.id, "startTime", e.target.value)
                           }
-                          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary dark:bg-gray-700"
+                          className="w-full px-4 py-4 text-lg border-2 border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary dark:bg-gray-700 text-center font-semibold"
                           required
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium mb-1">
+                        <label className="block text-sm font-medium mb-2">
                           End Time *
                         </label>
                         <input
@@ -250,7 +250,7 @@ export default function CreateEventPage() {
                           onChange={(e) =>
                             updateOption(option.id, "endTime", e.target.value)
                           }
-                          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary dark:bg-gray-700"
+                          className="w-full px-4 py-4 text-lg border-2 border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary dark:bg-gray-700 text-center font-semibold"
                           required
                         />
                       </div>
@@ -258,7 +258,7 @@ export default function CreateEventPage() {
 
                     <div className="grid grid-cols-2 gap-3">
                       <div>
-                        <label className="block text-sm font-medium mb-1">
+                        <label className="block text-sm font-medium mb-2">
                           Min Players
                         </label>
                         <input
@@ -272,11 +272,13 @@ export default function CreateEventPage() {
                             )
                           }
                           min="1"
-                          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary dark:bg-gray-700"
+                          inputMode="numeric"
+                          pattern="[0-9]*"
+                          className="w-full px-4 py-4 text-lg border-2 border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary dark:bg-gray-700 text-center font-semibold"
                         />
                       </div>
                       <div>
-                        <label className="block text-sm font-medium mb-1">
+                        <label className="block text-sm font-medium mb-2">
                           Max Players
                         </label>
                         <input
@@ -290,7 +292,9 @@ export default function CreateEventPage() {
                             )
                           }
                           min={option.minPlayers}
-                          className="w-full px-3 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary dark:bg-gray-700"
+                          inputMode="numeric"
+                          pattern="[0-9]*"
+                          className="w-full px-4 py-4 text-lg border-2 border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary dark:bg-gray-700 text-center font-semibold"
                         />
                       </div>
                     </div>
@@ -306,7 +310,7 @@ export default function CreateEventPage() {
 
             <div className="space-y-4">
               <div>
-                <label className="block text-sm font-medium mb-1">
+                <label className="block text-sm font-medium mb-2">
                   Price per Player
                 </label>
                 <input
@@ -314,20 +318,21 @@ export default function CreateEventPage() {
                   value={pricePerPlayer}
                   onChange={(e) => setPricePerPlayer(e.target.value)}
                   placeholder="e.g., $25"
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary dark:bg-gray-700"
+                  inputMode="numeric"
+                  className="w-full px-4 py-3 text-base border-2 border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary dark:bg-gray-700"
                 />
               </div>
 
               <div>
-                <label className="block text-sm font-medium mb-1">
+                <label className="block text-sm font-medium mb-2">
                   Notes (What to bring, rules, etc.)
                 </label>
                 <textarea
                   value={notes}
                   onChange={(e) => setNotes(e.target.value)}
                   placeholder="e.g., Bring shin guards, studs recommended"
-                  rows={3}
-                  className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary dark:bg-gray-700"
+                  rows={4}
+                  className="w-full px-4 py-3 text-base border-2 border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary dark:bg-gray-700 resize-none"
                 />
               </div>
             </div>
@@ -336,7 +341,7 @@ export default function CreateEventPage() {
           {/* Submit Button */}
           <button
             type="submit"
-            className="w-full bg-primary hover:bg-green-600 text-white font-bold py-4 px-6 rounded-lg transition-colors"
+            className="w-full bg-primary hover:bg-green-600 text-white font-bold py-5 px-6 rounded-xl text-lg transition-colors shadow-lg active:shadow-md active:scale-[0.98]"
           >
             Create Event →
           </button>
